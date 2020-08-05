@@ -2,17 +2,16 @@
   width: 50%;
 }
 
+.productPage {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
 .productPageContent {
   display: flex;
   flex-direction: row;
   margin-top: 80px;
   text-align: start;
-  padding-bottom: 40px;
-}
-
-.productPage {
-  min-height: 100vh;
-  background-color: #f5f5f5;
 }
 
 .productTitle {

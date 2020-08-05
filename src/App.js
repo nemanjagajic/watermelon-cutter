@@ -10,8 +10,8 @@ function App() {
       <div className='productPage'>
         <Header />
         <Product />
-        <Characteristics />
       </div>
+      <Characteristics />
     </div>
   );
 }
