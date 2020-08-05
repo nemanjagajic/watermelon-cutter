@@ -1,0 +1,156 @@
+.carouselContainer {
+  width: 50%;
+}
+
+.productPageContent {
+  display: flex;
+  flex-direction: row;
+  margin-top: 80px;
+  text-align: start;
+  padding-bottom: 40px;
+}
+
+.productPage {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.productTitle {
+  font-size: 36px;
+  color: #555555;
+}
+
+.productInfo {
+  padding: 20px
+}
+
+.productDescription {
+  margin-top: 20px;
+  color: #808080;
+  font-size: 18px;
+}
+
+.priceContainer {
+  margin-top: 40px;
+}
+
+.newPriceContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-top: 5px;
+}
+
+.newPrice {
+  color: #009688;
+  font-size: 30px;
+}
+
+.newPriceLabel {
+  font-size: 22px;
+  color: #a6a6a6;
+  padding-right: 5px;
+}
+
+.priceOld {
+  color: #a6a6a6;
+  text-decoration: line-through;
+}
+
+.quantity {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.quantityText {
+  color: #808080;
+  font-size: 18px;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #009688;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.removeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #b3b3b3;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.numberOfItems {
+  text-align: center;
+  width: 20px;
+  color: #333333;
+  font-size: 18px;
+}
+
+.total {
+  display: flex;
+  flex-direction: row;
+}
+
+.totalText {
+  color: #b3b3b3;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.orderButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #009688;
+  color: #ffffff;
+  width: 150px;
+  height: 50px;
+  margin-top: 40px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: ease 200ms;
+}
+
+.orderButton:hover {
+  background-color: #4DB6AC;
+  transition: ease 200ms;
+}
+
+@media only screen and (max-width: 1000px) {
+  .carouselContainer {
+    width: 100%;
+  }
+  .productPageContent {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding-left: 10px;
+  }
+  .productInfo {
+    padding-top: 20px;
+  }
+}

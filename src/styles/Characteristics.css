@@ -1,0 +1,41 @@
+.characteristicsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+  width: 100%;
+  background-color: #ffffff;
+  padding-top: 40px;
+}
+
+.characteristicsTitle {
+  font-size: 32px;
+  color: #666666;
+}
+
+.greenBottom {
+  width: 150px;
+  height: 2px;
+  background-color: #009688;
+  margin-top: 15px;
+}
+
+.productDescription {
+  margin-top: 40px;
+  width: 60%
+}
+
+.watermelonGif {
+  margin-top: 40px;
+  width: 400px;
+  border-radius: 40px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .productDescription {
+    width: 90%;
+  }
+  .watermelonGif {
+    width: 90%;
+  }
+}
