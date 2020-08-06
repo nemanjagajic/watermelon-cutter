@@ -19,6 +19,7 @@ const ImageCarousel = () => {
       <Carousel
         value={value}
         onChange={onChange}
+        draggable={false}
       >
         <img className='carouselImg' src={cutting} />
         <img className='carouselImg' src={cutting2} />

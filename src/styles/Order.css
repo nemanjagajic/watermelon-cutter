@@ -6,6 +6,10 @@ input {
   color: #555;
 }
 
+input:focus {
+  caret-color: #009688;
+}
+
 .orderContainer {
   display: flex;
   flex-direction: column;
@@ -93,8 +97,38 @@ input {
   margin-top: 20px;
 }
 
+.contactInfo {
+  margin: 40px 20px 0;
+  font-size: 14px;
+  color: #808080;
+}
+
+.orderMessage {
+  margin: 10px;
+  color: #333333;
+  height: 20px;
+}
+
+.quantityOrder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 450px;
+  padding: 15px;
+  margin: 10px;
+  outline: none !important;
+  background-color: #ffffff;
+  border-radius: 20px;
+  font-size: 16px;
+  border: 1px solid #e6e6e6;
+  height: 22px;
+}
+
 @media only screen and (max-width: 1000px) {
   .input {
+    width: 80%
+  }
+  .quantityOrder {
     width: 80%
   }
 }
