@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import '../styles/Order.css'
+import emailjs from 'emailjs-com';
+import { userID, template, serviceId } from '../config/keys'
 
 const PRICE = 1390;
 
@@ -13,6 +15,18 @@ const Order = ({ numberOfItems, setNumberOfItems }) => {
       return
     }
     setUserData({ ...userData, [name]: value })
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    const data = {...userData, numberOfItems}
+
+    emailjs.send(serviceId, template, data, userID)
+      .then((result) => {
+        console.log('Success!', result)
+      }, (error) => {
+        console.log(error.text);
+      });
   }
 
   return (
@@ -47,6 +61,7 @@ const Order = ({ numberOfItems, setNumberOfItems }) => {
           type={'submit'}
           value={'Naruči'}
           className={'button centered'}
+          onClick={handleSubmit}
         />
       </form>
       <div className='totalOrder'>
