@@ -1,6 +1,6 @@
-import ImageCarousel from './ImageCarousel'
+import ImageCarousel from '../components/ImageCarousel'
 import React, { useState } from 'react'
-import './styles/Product.css'
+import '../styles/Product.css'
 
 const PRICE_OLD = 1790;
 const PRICE = 1390;
@@ -26,7 +26,9 @@ const Product = () => {
             <div className='quantityText'>Količina:</div>
             <div onClick={() => setNumberOfItems(numberOfItems + 1)} className='addButton'>+</div>
             <div className='numberOfItems'>{numberOfItems}</div>
-            <div onClick={() => setNumberOfItems(numberOfItems - 1)} className='removeButton'>-</div>
+            <div onClick={() => {
+              if (numberOfItems > 1) setNumberOfItems(numberOfItems - 1)
+            }} className='removeButton'>-</div>
           </div>
           <div className='total'>
             <div className='totalText'>{`Ukupno: ${PRICE} x ${numberOfItems} = ${numberOfItems * PRICE} rsd + troškovi dostave`}</div>

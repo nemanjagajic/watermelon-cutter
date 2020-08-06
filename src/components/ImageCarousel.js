@@ -2,10 +2,10 @@ import React from 'react'
 import Carousel, { Dots } from '@brainhubeu/react-carousel'
 import '@brainhubeu/react-carousel/lib/style.css'
 import { useState } from 'react'
-import cutting from './assets/cutting.jpg'
-import cutting2 from './assets/cutting2.png'
-import tutorial from './assets/tutorial.jpg'
-import './styles/Carousel.css'
+import cutting from '../assets/cutting.jpg'
+import cutting2 from '../assets/cutting2.png'
+import tutorial from '../assets/tutorial.jpg'
+import '../styles/Carousel.css'
 
 const ImageCarousel = () => {
   const [value, setValue] = useState(0);

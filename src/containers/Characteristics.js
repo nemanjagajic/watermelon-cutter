@@ -1,6 +1,6 @@
 import React from 'react'
-import './styles/Characteristics.css'
-import watermelonGif from './assets/watermelonGif.gif'
+import '../styles/Characteristics.css'
+import watermelonGif from '../assets/watermelonGif.gif'
 
 const Characteristics = () => {
   return (
