@@ -5,7 +5,7 @@ import '../styles/Product.css'
 const PRICE_OLD = 1790;
 const PRICE = 1390;
 
-const Product = ({ numberOfItems, setNumberOfItems }) => {
+const Product = ({ numberOfItems, setNumberOfItems, orderRef, scrollTo }) => {
   return (
     <div className='productPageContent'>
       <div className='carouselContainer'>
@@ -31,7 +31,10 @@ const Product = ({ numberOfItems, setNumberOfItems }) => {
           <div className='total'>
             <div className='totalText'>{`Ukupno: ${PRICE} x ${numberOfItems} = ${numberOfItems * PRICE} rsd + troškovi dostave`}</div>
           </div>
-          <div className='orderButtonWrapper'>
+          <div
+            className='orderButtonWrapper'
+            onClick={() => scrollTo(orderRef)}
+          >
             <div className={'orderButton'}>Naruči</div>
           </div>
         </div>

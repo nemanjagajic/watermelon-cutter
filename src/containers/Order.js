@@ -5,7 +5,7 @@ import { userID, template, serviceId } from '../config/keys'
 
 const PRICE = 1390;
 
-const Order = ({ numberOfItems, setNumberOfItems }) => {
+const Order = ({ numberOfItems, setNumberOfItems, orderRef }) => {
   const initialUserData = { fullName: '', email: '', phoneNumber: '', address: '' }
   const [userData, setUserData] = useState(initialUserData)
   const [isOrdering, setIsOrdering] = useState(false)
@@ -43,7 +43,10 @@ const Order = ({ numberOfItems, setNumberOfItems }) => {
   }
 
   return (
-    <div className={'orderContainer'}>
+    <div
+      className={'orderContainer'}
+      ref={orderRef}
+    >
       <div className='orderTitle'>Naruči</div>
       <div className='orderGreenBottom' />
       <form className={'content'}>

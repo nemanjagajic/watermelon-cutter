@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState, useRef } from 'react'
 import './styles/App.css'
 import Header from './components/Header'
 import Product from './containers/Product'
@@ -7,15 +7,33 @@ import Order from './containers/Order'
 
 function App() {
   const [numberOfItems, setNumberOfItems] = useState(1)
+  const orderRef = useRef(null)
+  const characteristicsRef = useRef(null)
+  const scrollTo = ref => ref.current.scrollIntoView({behavior: 'smooth'})
 
   return (
     <div className='App'>
       <div className='productPage'>
-        <Header />
-        <Product numberOfItems={numberOfItems} setNumberOfItems={setNumberOfItems} />
+        <Header
+          orderRef={orderRef}
+          characteristicsRef={characteristicsRef}
+          scrollTo={scrollTo}
+        />
+        <Product
+          numberOfItems={numberOfItems}
+          setNumberOfItems={setNumberOfItems}
+          orderRef={orderRef}
+          scrollTo={scrollTo}
+        />
       </div>
-      <Characteristics />
-      <Order numberOfItems={numberOfItems} setNumberOfItems={setNumberOfItems} />
+      <Characteristics
+        characteristicsRef={characteristicsRef}
+      />
+      <Order
+        numberOfItems={numberOfItems}
+        setNumberOfItems={setNumberOfItems}
+        orderRef={orderRef}
+      />
     </div>
   );
 }
