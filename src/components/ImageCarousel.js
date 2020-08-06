@@ -21,17 +21,17 @@ const ImageCarousel = () => {
         onChange={onChange}
         draggable={false}
       >
-        <img className='carouselImg' src={cutting} />
-        <img className='carouselImg' src={cutting2} />
-        <img className='carouselImg' src={tutorial} />
+        <img alt={'carouselImg'} className='carouselImg' src={cutting} />
+        <img alt={'carouselImg'} className='carouselImg' src={cutting2} />
+        <img alt={'carouselImg'} className='carouselImg' src={tutorial} />
       </Carousel>
       <Dots
         value={value}
         onChange={onChange}
         thumbnails={[
-          <img className='carouselImgSmall' src={cutting} />,
-          <img className='carouselImgSmall' src={cutting2} />,
-          <img className='carouselImgSmall' src={tutorial} />
+          <img alt={'carouselImg'} className='carouselImgSmall' src={cutting} />,
+          <img alt={'carouselImg'} className='carouselImgSmall' src={cutting2} />,
+          <img alt={'carouselImg'} className='carouselImgSmall' src={tutorial} />
         ]}
       />
     </div>

@@ -1,5 +1,5 @@
 import ImageCarousel from '../components/ImageCarousel'
-import React, { useState } from 'react'
+import React from 'react'
 import '../styles/Product.css'
 
 const PRICE_OLD = 1790;
