@@ -31,7 +31,9 @@ const Product = ({ numberOfItems, setNumberOfItems }) => {
           <div className='total'>
             <div className='totalText'>{`Ukupno: ${PRICE} x ${numberOfItems} = ${numberOfItems * PRICE} rsd + troškovi dostave`}</div>
           </div>
-          <div className={'orderButton'}>Naruči</div>
+          <div className='orderButtonWrapper'>
+            <div className={'orderButton'}>Naruči</div>
+          </div>
         </div>
       </div>
     </div>

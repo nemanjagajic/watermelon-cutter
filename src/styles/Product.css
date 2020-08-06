@@ -120,6 +120,11 @@
   margin-top: 20px;
 }
 
+.orderButtonWrapper {
+  width: 100%;
+  display: flex;
+}
+
 .orderButton {
   display: flex;
   align-items: center;
@@ -151,5 +156,8 @@
   }
   .productInfo {
     padding-top: 20px;
+  }
+  .orderButtonWrapper {
+    justify-content: center;
   }
 }

@@ -6,7 +6,9 @@ import { userID, template, serviceId } from '../config/keys'
 const PRICE = 1390;
 
 const Order = ({ numberOfItems, setNumberOfItems }) => {
-  const [userData, setUserData] = useState({ email: '', phoneNumber: '' })
+  const initialUserData = { fullName: '', email: '', phoneNumber: '', address: '' }
+  const [userData, setUserData] = useState(initialUserData)
+  const [isOrdering, setIsOrdering] = useState(false)
 
   const onChange = e => {
     const { name, value } = e.target
@@ -19,11 +21,22 @@ const Order = ({ numberOfItems, setNumberOfItems }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
+    setIsOrdering(true)
+    const { fullName, phoneNumber, address } = userData
+    if (!fullName.trim() || !phoneNumber.trim() || !address.trim()) {
+      alert('Sva obavezna polja moraju biti popunjena')
+      setIsOrdering(false)
+      return
+    }
+
     const data = {...userData, numberOfItems}
 
     emailjs.send(serviceId, template, data, userID)
       .then((result) => {
-        console.log('Success!', result)
+        setIsOrdering(false)
+        alert(`Uspešno ste naručili ${numberOfItems} ${numberOfItems === 1 ? 'sekač' : 'sekača'} lubenice. Uskoro ćete dobiti email ili sms o potvrdi narudžbine`)
+        setUserData(initialUserData)
+        setNumberOfItems(1)
       }, (error) => {
         console.log(error.text);
       });
@@ -35,6 +48,13 @@ const Order = ({ numberOfItems, setNumberOfItems }) => {
       <div className='orderGreenBottom' />
       <form className={'content'}>
         <input
+          className={'input'}
+          onChange={onChange}
+          name={'fullName'}
+          placeholder={'Ime i prezime*'}
+          value={userData.fullName}
+        />
+        <input
           type={'email'}
           className={'input'}
           onChange={onChange}
@@ -45,8 +65,15 @@ const Order = ({ numberOfItems, setNumberOfItems }) => {
         <input
           className={'input'}
           onChange={onChange}
+          name={'address'}
+          placeholder={'Adresa*'}
+          value={userData.address}
+        />
+        <input
+          className={'input'}
+          onChange={onChange}
           name={'phoneNumber'}
-          placeholder={'Broj telefona'}
+          placeholder={'Broj telefona*'}
           value={userData.phoneNumber}
         />
         <input
@@ -57,12 +84,21 @@ const Order = ({ numberOfItems, setNumberOfItems }) => {
           placeholder={'Količina'}
           value={numberOfItems}
         />
-        <input
-          type={'submit'}
-          value={'Naruči'}
-          className={'button centered'}
-          onClick={handleSubmit}
-        />
+        {isOrdering ? (
+          <input
+            type={'submit'}
+            value={'Slanje u toku...'}
+            className={'buttonDisabled centered'}
+            onClick={e => e.preventDefault()}
+          />
+         ) : (
+          <input
+            type={'submit'}
+            value={'Naruči'}
+            className={'button centered'}
+            onClick={handleSubmit}
+          />
+        )}
       </form>
       <div className='totalOrder'>
         <div className='totalOrderText'>
