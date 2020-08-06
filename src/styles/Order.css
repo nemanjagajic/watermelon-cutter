@@ -1,0 +1,81 @@
+input {
+  -webkit-appearance: none;
+  box-shadow: none !important;
+  outline: none !important;
+  border: none;
+  color: #555;
+}
+
+.orderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 50px;
+  align-items: center;
+}
+
+.input {
+  padding: 15px;
+  margin: 10px;
+  outline: none !important;
+  width: 450px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  font-size: 16px;
+  border: 1px solid #e6e6e6;
+}
+
+.input::placeholder {
+  color: #cccccc;
+}
+
+.button {
+  width: 180px;
+  height: 50px;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 30px;
+  background-color: #009688;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  transition: ease 200ms;
+}
+
+.button:hover {
+  background-color: #4DB6AC;
+  transition: ease 200ms;
+}
+
+.orderTitle {
+  font-size: 32px;
+  color: #666666;
+}
+
+.orderGreenBottom {
+  width: 150px;
+  height: 2px;
+  background-color: #009688;
+  margin-top: 15px;
+}
+
+.totalOrder {
+  display: flex;
+  flex-direction: row;
+}
+
+.totalOrderText {
+  color: #999999;
+  font-weight: 500;
+  margin-top: 20px;
+}

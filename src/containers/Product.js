@@ -5,9 +5,7 @@ import '../styles/Product.css'
 const PRICE_OLD = 1790;
 const PRICE = 1390;
 
-const Product = () => {
-  const [numberOfItems, setNumberOfItems] = useState(1)
-
+const Product = ({ numberOfItems, setNumberOfItems }) => {
   return (
     <div className='productPageContent'>
       <div className='carouselContainer'>
