@@ -5,3 +5,9 @@
 .carouselImgSmall {
   width: 60px;
 }
+
+@media only screen and (max-width: 500px) {
+  .carouselImg {
+    width: 90%;
+  }
+}
