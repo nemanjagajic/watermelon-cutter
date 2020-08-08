@@ -50,6 +50,7 @@ const Order = ({ numberOfItems, setNumberOfItems, orderRef }) => {
     >
       <div className='orderTitle'>Naruči</div>
       <div className='orderGreenBottom' />
+      <div className={'orderInfo'}>Nakon što napravite porudžbinu, naši administratori će vam u najkraćem mogućem roku poštom poslati proizvod i obavestiti vas o njegovom slanju putem email-a ili broja telefona.</div>
       <form className={'content'}>
         <input
           className={'input'}
@@ -70,7 +71,7 @@ const Order = ({ numberOfItems, setNumberOfItems, orderRef }) => {
           className={'input'}
           onChange={onChange}
           name={'address'}
-          placeholder={'Adresa*'}
+          placeholder={'Adresa* (Ulica i broj, grad)'}
           value={userData.address}
         />
         <input
